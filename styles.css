@@ -1,0 +1,120 @@
+/* Base styles for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4; /* Fallback background color */
+    background-image: url('images/background.jpg'); /* Background image for the page */
+    background-size: cover; /* Ensures the background image covers the entire page */
+    background-position: center; /* Centers the background image */
+    margin: 0;
+    padding: 0;
+}
+
+/* Logo styles */
+.logo-container {
+    text-align: center; /* Centers the logo horizontally */
+    margin-top: 50px; /* Space above the logo */
+}
+
+.logo {
+    width: 550px; /* Increased logo width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Main container styles */
+.container {
+    max-width: 800px; /* Maximum width of the container */
+    margin: 50px auto; /* Center the container with auto margin */
+    background-image: url('images/container-background.jpg'); /* Container background image */
+    background-size: cover; /* Ensure the background image covers the entire container */
+    background-position: center; /* Center the image within the container */
+    padding: 20px; /* Padding inside the container */
+    box-shadow: 0 0 20px 10px rgba(19, 69, 15, 0.7); /* Glowing green shadow */
+    border-radius: 10px; /* Rounded corners for the container */
+    color: rgb(177, 177, 177); /* Text color */
+    position: relative; /* Ensure proper layering */
+}
+
+/* Add a subtle green glow effect */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    background: rgba(4, 255, 0, 0.3); /* Green glow */
+    z-index: -1; /* Place the glow behind the container */
+    border-radius: 15px; /* Match the container's rounded corners */
+    filter: blur(10px); /* Soften the glow */
+}
+
+/* Heading styles */
+h1 {
+    text-align: center; /* Center-align the main heading */
+    font-size: 48px; /* Increased font size for the title */
+}
+
+h2 {
+    text-align: left; /* Align subtitles to the left */
+    margin-bottom: 20px;
+}
+
+/* Form group styles */
+.form-group {
+    margin-bottom: 15px; /* Space between form groups */
+}
+
+label {
+    display: block; /* Label as a block element */
+    margin-bottom: 5px; /* Space below labels */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%; /* Full width inputs */
+    padding: 8px; /* Padding inside inputs */
+    box-sizing: border-box; /* Include padding in width calculation */
+    border: 1px solid #00ff08; /* Border color */
+    border-radius: 4px; /* Rounded corners */
+    background-color: rgb(148, 148, 148); /* Light grey input background */
+    color: #000000; /* Text color inside inputs */
+    margin-bottom: 15px; /* Space between inputs */
+}
+
+/* Button styles */
+button {
+    display: block; /* Block-level button */
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside the button */
+    background-color: rgb(36, 36, 36); /* Button background color */
+    color: rgb(4, 255, 0, 0.3); /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #000000; /* Darker color on hover */
+}
+
+/* Results section styles */
+#results {
+    margin-top: 20px; /* Space above results */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .logo {
+        width: 300px; /* Adjusted logo size for smaller screens */
+    }
+
+    .container {
+        padding: 15px; /* Adjust container padding on smaller screens */
+    }
+
+    button {
+        padding: 8px; /* Adjust button padding on smaller screens */
+    }
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Estimate Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Logo Container -->
+    <div class="logo-container">
+        <img src="images/logo.png" alt="Company Logo" class="logo">
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Job Estimate Calculator</h1>
+
+        <!-- Labor Section Form -->
+        <form id="jobForm">
+            <section id="labor-section">
+                <h2>Enter Labor Time</h2>
+
+                <div class="form-group">
+                    <label for="driveTime">Drive Time (minutes):</label>
+                    <input type="number" id="driveTime" placeholder="Enter Drive Time">
+                </div>
+
+                <div class="form-group">
+                    <label for="supplyHouseTime">Supply House Time (minutes):</label>
+                    <input type="number" id="supplyHouseTime" placeholder="Enter Supply House Time">
+                </div>
+
+                <div class="form-group">
+                    <label for="diagnosisTime">Diagnosis Time (minutes):</label>
+                    <input type="number" id="diagnosisTime" placeholder="Enter Diagnosis Time">
+                </div>
+
+                <div class="form-group">
+                    <label for="repairTime">Repair Time (minutes):</label>
+                    <input type="number" id="repairTime" placeholder="Enter Repair Time">
+                </div>
+
+                <div class="form-group">
+                    <label for="cleanupTime">Clean-Up/Invoicing Time (minutes):</label>
+                    <input type="number" id="cleanupTime" placeholder="Enter Clean-Up Time">
+                </div>
+
+                <button type="submit">Calculate Labor</button>
+
+                <!-- New labor calculation breakdown display -->
+                <p id="laborBreakdown" style="display:none;"></p>
+            </section>
+        </form>
+
+        <!-- Material Section (Hidden initially) -->
+        <section id="material-section" style="display:none;">
+            <h2>Enter Material Cost</h2>
+            <div class="form-group">
+                <label for="materialCost">Material Cost:</label>
+                <input type="number" id="materialCost" placeholder="Enter Material Cost">
+            </div>
+            <button id="material-calculate-btn">Calculate Material</button>
+        </section>
+
+        <!-- Results Section -->
+        <section id="results" style="display:none;">
+            <h2>Results</h2>
+            <p>Total Labor Cost: $<span id="totalLaborCost"></span></p>
+            <p>Total Material Cost: $<span id="totalMaterialCost"></span></p>
+            <p>Total Job Cost (with 30% markup): $<span id="totalJobCost"></span></p>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
