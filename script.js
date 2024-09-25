@@ -47,17 +47,18 @@ function calculateMaterial(event) {
     calculateTotalJobCost();
 }
 
-// Function to calculate the total job cost (labor + material + 30% markup)
+// Function to calculate the total job cost (labor + material + 15% surcharge)
 function calculateTotalJobCost() {
     const laborCost = parseFloat(document.getElementById('totalLaborCost').textContent.replace(/,/g, ''));
     const materialCost = parseFloat(document.getElementById('totalMaterialCost').textContent.replace(/,/g, ''));
 
     if (!isNaN(laborCost) && !isNaN(materialCost)) {
-        const jobMarkup = 1.3; // 30% markup
-        const totalJobCost = (laborCost + materialCost) * jobMarkup;
+        const surcharge = 1.15; // 15% surcharge
+        const totalJobCost = (laborCost + materialCost) * surcharge;
 
-        // Display the total job cost with commas and two decimal places
+        // Display the total job cost with commas and two decimal places and update verbiage to "with surcharge"
         document.getElementById('totalJobCost').textContent = formatNumber(totalJobCost);
+        document.querySelector('#results p:last-child').textContent = `Total Job Cost (with surcharge): $${formatNumber(totalJobCost)}`;
 
         // Show the results section
         document.getElementById('results').style.display = 'block';
